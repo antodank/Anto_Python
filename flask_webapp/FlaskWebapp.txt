@@ -1,0 +1,15 @@
+https://www.codementor.io/garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2
+
+Flask, which we'll use to route web traffic through HTTP requests to specific functions in our code base,
+SQLAlchemy, which we'll use to make the interaction between Python and our database smoother,
+Flask-SQLAlchemy, which we'll use to make the interaction between Flask and SQLAlchemy smoother.
+
+pip3 install --user flask sqlalchemy flask-sqlalchemy
+
+In line 1, we import Flask
+In line 3, we initialize a flask application, passing in Python's special __name__ variable to let Flask intelligently configure other parts of our application.
+In line 5, we use a Python decorator that Flask provides. This maps the main part of our application (/) to the home() function. We'll see how routing works in more detail when we add more routes.
+In lines 6-7 we define a function that simply returns a static string. This is what will be displayed to the user when they visit our page.
+In lines 9-10, we run our application behind an if guard. This will ensure that we don't start up web servers if we ever import this script into another one (we'll only run the web server if we run this file explicitly).
+
+request module from Flask, which allows us to easily handle many aspects of HTTP requests, including data sent via forms.

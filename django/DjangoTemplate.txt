@@ -1,0 +1,33 @@
+https://www.c-sharpcorner.com/article/django-templates/
+
+Django Templates 
+
+is used to separate our HTML code from Django views.
+
+create a separate folder called templates in your project folder
+
+Open settings.py, look for the TEMPLATE variable and do the following changes
+
+ 'DIRS': ['templates'],
+ 
+It informed Django where to look for the template
+ 
+Edit views.py file from webapp
+ 
+from django.shortcuts import render  
+def main_page(request):  
+	return render(None, 'index.html')
+
+We imported render method from django.shortcut.
+In order to create HTML output from the template, we used the render method. It combines a given template with a given context dictionary and returns an HttpResponse object with that rendered text.
+
+render(request, template_name, context=None, content_type=None, status=None, using=None) 
+
+request:
+The request object is used to generate this response.
+
+template_name:
+The full name of a template to use or sequence of template names.
+
+context:
+A dictionary of values to add to the template context.

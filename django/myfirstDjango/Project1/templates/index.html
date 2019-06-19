@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  
+    <head>  
+        <title>{{ head_title }}</title>  
+    </head>  
+      
+    <body>  
+        <h1>{{ page_title }}</h1> 
+        <p>My first name is {{ first_name }} and last name is {{ last_name }}</p> 
+        <p>{{ page_body }}</p> 
+        
+        {% if today_is_weekend %}  
+        <p>Welcome to the weekend!</p>  
+        {% else %}  
+        <p>Get back to work.</p>  
+        {% endif %} 
+
+        {% filter lower %}  
+        This text will appear in all LOWERCASE.  
+        {% endfilter %} 
+
+        {% filter upper %}  
+        This text will appear in all UPPERCASE.  
+        {% endfilter %} 
+    </body>  
+  
+</html>

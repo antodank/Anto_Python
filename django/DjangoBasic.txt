@@ -1,0 +1,79 @@
+URLS - https://www.c-sharpcorner.com/article/getting-started-with-django/
+
+Installing Python
+Check Python version
+> python --version
+
+pip -
+pip is like the package manager for Python. It will make installing and uninstalling Python packages (such as Django) very easy
+> python -m ensurepip
+
+if not installed 
+> python –m pip install –U pip
+or
+> python get-pip.py
+
+Introduction to Django 
+Python Virtual Environment
+Django Installation
+Creating a project in Django
+
+Django - 
+Django is a free and open source web framework written in Python, that removes the tedium of building websites. 
+Django handles the HTTP request and response cycle.
+
+Python Virtual Environment
+A virtual environment is a self-contained directory tree containing a Python installation for a particular version of Python.
+> python -m venv <Django_env_name> 
+
+we just created that environment. To use this environment, we need to activate it 
+Navigate to Script
+run Activate.bat
+
+Install Django
+> pip install django 
+
+Creating Django Project
+> django-admin startproject sampleapp
+
+Run the application
+> python manage.py runserver
+
+
+Creating the Welcome View
+
+To change default welcome page we need entry point in the form of URL. This URL would tell Django to display our page.
+First we would have to create startup application inside our project. The application is more like a module inside our web that would perform a certain task. 
+
+> python manage.py startapp webapp
+
+This command will create a folder named webapp inside the project folder
+------------------------
+
+From sampleapp project open Urls.py
+
+from django.conf.urls import url  
+from webapp.views import * 
+
+The file is importing url from django.conf.urls.
+We imported all the views from webapp.views.
+
+url(r'^$', main_page),
+
+The urlpatterns function is used to define the URL table.
+We call our main_page function in it.
+^$ basically means a string that doesn't contain anything. pick-up page from root
+---------------------------
+
+From webapp open views.py
+code snippet -
+from django.http import HttpResponse  
+def main_page(request):  
+	output = """ your html code """  
+	return HttpResponse(output)  
+
+We import the class HttpResponse from django.http. 
+We define a Python function that takes one parameter named request, build the HTML code of the response page, wrap it within an HttpResponse object and return it.
+
+Now that everything is set, let’s run and check our first view.	
+> python manage.py runserver
