@@ -1,0 +1,4 @@
+https://datatofish.com/add-python-to-windows-path/
+https://datatofish.com/python-tutorials/
+
+python -m pip install --upgrade pip
