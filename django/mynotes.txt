@@ -1,4 +1,7 @@
-URLS - https://www.c-sharpcorner.com/article/getting-started-with-django/
+﻿URLS - https://www.c-sharpcorner.com/article/getting-started-with-django/
+https://realpython.com/get-started-with-django-1/
+
+
 
 Installing Python
 Check Python version

@@ -1,0 +1,10 @@
+ python -m venv myvenv
+
+ .\myvenv\Scripts\activate
+
+ check version
+ python --version
+
+ ctrl shift  P -> realod windows
+
+ pip install requests

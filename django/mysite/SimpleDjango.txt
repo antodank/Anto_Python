@@ -1,0 +1,76 @@
+https://pythonprogramming.net/django-web-development-python-tutorial/
+
+pip install django
+
+django-admin startproject mysite
+
+cd mysite
+
+python manage.py startapp main
+
+python manage.py runserver
+
+
+Django uses what's called a Model View Controller paradigm. 
+Every page you visit on a Django application is likely using these three things to serve you data.
+
+Model: Your database abstraction, which will contain objects that are mapped to your database.
+
+View: How you will represent the data. This is where you will actually render things to a user.
+
+Controller: How you map URLs to views.
+
+
+When someone visits the homepage, 
+Django looks first at the mysite/mysite/urls.py, seeing that it points to mysite/main/urls.py, which then points to views.homepage
+
+mysite/mysite/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("", include('main.urls')),
+    path('admin/', admin.site.urls),
+]
+--------------------------------------------
+
+mysite/main/urls.py
+
+from django.urls import path
+from . import views
+
+app_name = 'main'  # here for namespacing of urls.
+
+urlpatterns = [
+    path("", views.homepage, name="homepage"),
+]
+
+
+we asked urls.py to look for a homepage function, so let's define that
+
+code changes in models.py and then
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+create object using shell
+python manage.py shell
+
+from main.models import Tutorial
+from django.utils import timezone
+
+Tutorial.objects.all()
+new_tutorial = Tutorial(tutorial_title="To be", tutorial_content="or not to be.That is the question.", tutorial_published=timezone.now())
+new_tutorial.save()
+
+create an administrator user - 
+python manage.py createsuperuser
+
+
+
+
+python3 -m pip install django-tinymce4-lite.
+
+
