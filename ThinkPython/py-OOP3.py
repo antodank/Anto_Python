@@ -1,11 +1,9 @@
 class Point(object):
     """Represents a point in 2-D space."""
-
-
     def print_point(p):
         """Print a Point object in human-readable format."""
-        print "(%g, %g", % (p.x, p.y)
-
+        #print "(%g, %g", % (p.x, p.y)
+        print("X=%d, Y=%s" % (p.x, p.y))
 
 class Rectangle(object):
     """Represents a rectangle.
@@ -21,30 +19,30 @@ class Rectangle(object):
         rect.width += dwidth
         rect.height += dheight
     
-    def main():
-        blank = Point()
-        blank.x = 3
-        blank.y = 4
-        print 'blank',
-        print_point(blank)
+def main():
+    blank = Point()
+    blank.x = 3
+    blank.y = 4
+    print('blank')
+    blank.print_point()
 
-        # box = Rectangle()
-        # box.width = 100.0
-        # box.height = 200.0
-        # box.corner = Point()
-        # box.corner.x = 0.0
-        # box.corner.y = 0.0
+    box = Rectangle()
+    box.width = 100.0
+    box.height = 200.0
+    box.corner = Point()
+    box.corner.x = 0.0
+    box.corner.y = 0.0
 
-        # center = find_center(box)
-        # print 'center',
-        # print_point(center)
+    center = box.find_center()
+    print('center')
+    center.print_point()
 
-        # print box.width
-        # print box.height
-        # print 'grow'
-        # grow_rectangle(box, 50, 100)
-        # print box.width
-        # print box.height
+    # print box.width
+    # print box.height
+    # print 'grow'
+    # grow_rectangle(box, 50, 100)
+    # print box.width
+    # print box.height
 
 
 if __name__ == '__main__':
