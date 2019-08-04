@@ -1,0 +1,6 @@
+pip install flask-login
+pip install flask-dance
+
+pip install flask-wtf flask-sqlalchemy flask-login
+
+pip install python-ldap
