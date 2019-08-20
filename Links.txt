@@ -1,3 +1,7 @@
 https://github.com/PacktPublishing/Flask-Framework-Cookbook-Second-Edition
 
 https://www.packtpub.com/free-learning
+
+https://github.com/PacktPublishing/Flask-Framework-Cookbook-Second-Edition/
+
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world

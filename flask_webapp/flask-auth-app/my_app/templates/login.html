@@ -31,7 +31,7 @@
         <br/>
         <form
             method="POST"
-            action="{{ url_for('auth.ldap_login') }}"
+            action="{{ url_for('auth.google_login') }}"
             role="form">
           {{ form.csrf_token }}
           <div class="form-group">{{ form.username.label }}: {{ form.username() }}</div>
