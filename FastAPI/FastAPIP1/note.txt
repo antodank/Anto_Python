@@ -1,0 +1,25 @@
+Create a virtual environment by opening the Command Palette (Ctrl+Shift+P) 
+and running the Python: Create Environment command.
+OR
+c:\Practice\Anto_Python\FastAPI\FastAPIP1> python -m venv venv
+
+.\venv\Scripts\Activate.ps1; 
+
+pip install -r requirements.txt
+
+python main.py
+or
+.\venv\Scripts\python.exe main.py
+
+To exit
+(venv) PS C:\Practice\Anto_Python\FastAPI\FastAPIP1> deactivate
+
+
+Specific Version of python 
+
+py -3.13 -m venv .\.venv
+
+.\.venv\Scripts\Activate.ps1
+
+pip install tensorflow-cpu
+python .\prac1.py
