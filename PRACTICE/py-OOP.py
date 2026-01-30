@@ -1,0 +1,7 @@
+print(type(1))
+print(type('a'))
+print(type("ankit"))
+print(type(0.1))
+print(type([]))
+print(type(()))
+print(type({}))
