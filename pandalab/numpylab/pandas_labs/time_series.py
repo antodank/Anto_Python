@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas._libs.tslibs.nattype import NaTType
 
-from utils.dataset_config import get_dataset_path
+from numpylab.utils.dataset_config import get_dataset_path
 
 
 def load_dataset() -> pd.DataFrame:
@@ -25,16 +25,13 @@ def find_datetime_column(df: pd.DataFrame) -> str | None:
 def main() -> None:
     df = load_dataset()
 
-    # Detect a datetime column to enable time series operations.
     dt_col = find_datetime_column(df)
     if dt_col is None:
         print("No datetime-like column detected for time series example.")
         return
 
-    # Use the datetime column as the index to resample by month.
     df = df.set_index(dt_col).sort_index()
 
-    # Resample and count records per month to see activity over time.
     monthly_counts = df.resample("M").size().rename("records")
     print(monthly_counts.head())
 

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "numpylab"
+version = "0.1.0"
+description = "NumPy and pandas learning labs organized as modules and submodules"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[tool.setuptools]
+packages = ["numpylab", "numpylab.utils", "numpylab.pandas_labs"]

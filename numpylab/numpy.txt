@@ -1,0 +1,12 @@
+
+NumPy is mainly used for fast numerical computing in Python.
+
+Common uses:
+
+Working with arrays and matrices instead of slow Python lists
+Performing math operations on large datasets very quickly
+Statistics and data analysis (mean, std, percentiles, etc.)
+Linear algebra (matrix multiplication, inverse, eigenvalues)
+Random number generation for simulations and ML
+Data preprocessing for machine learning and scientific computing
+Serving as the foundation for libraries like pandas, SciPy, scikit-learn, and many ML tools

@@ -1,7 +1,8 @@
 import json
 from pathlib import Path
 
-CONFIG_PATH = Path(__file__).resolve().parents[1] / "config" / "dataset_config.json"
+CONFIG_PATH = Path(__file__).resolve().parents[2] / "config" / "dataset_config.json"
+PROJECT_ROOT = CONFIG_PATH.parents[1]
 
 
 def get_dataset_path() -> Path:
@@ -14,4 +15,7 @@ def get_dataset_path() -> Path:
     dataset_path = config.get("dataset_path")
     if not dataset_path:
         raise ValueError("dataset_path is missing in dataset_config.json")
-    return Path(dataset_path)
+    dataset_path_obj = Path(dataset_path)
+    if dataset_path_obj.is_absolute():
+        return dataset_path_obj
+    return (PROJECT_ROOT / dataset_path_obj).resolve()

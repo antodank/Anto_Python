@@ -1,6 +1,6 @@
 import pandas as pd
 
-from utils.dataset_config import get_dataset_path
+from numpylab.utils.dataset_config import get_dataset_path
 
 
 def load_dataset() -> pd.DataFrame:
@@ -15,7 +15,6 @@ def load_dataset() -> pd.DataFrame:
 def main() -> None:
     df = load_dataset()
 
-    # Find a categorical column and a numeric column for aggregation.
     cat_cols = df.select_dtypes(include=["object", "category"]).columns
     num_cols = df.select_dtypes(include="number").columns
 
@@ -26,7 +25,6 @@ def main() -> None:
     category = cat_cols[0]
     value = num_cols[0]
 
-    # Group by category and compute summary stats for the numeric column.
     grouped = df.groupby(category)[value].agg(["count", "mean", "min", "max"]).reset_index()
     print(grouped.head())
 
